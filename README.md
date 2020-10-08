@@ -1,6 +1,7 @@
 # k8s center实验操作记录文档
-> 本文档以实验操作的过程及内容为主进行记录，涉及少量的介绍性文字（来自网络开源）。
+> 文档以实验操作的过程及内容为主进行记录，涉及少量的介绍性文字（来自网络开源）。
 > 仅汇总主题所有链接，详细内容查看需要切换到相关链接。
+> https://gitee.com/cloudlove2007/k8s-center/blob/master/README.md （备份）
 
 - 《从k8s到PaaS：k8s-01-架构与规划》  https://www.yuque.com/docs/share/c14386b5-a6a2-46b8-a417-70174452c718?#
 - 《从k8s到PaaS：k8s-02-核心组件》   https://www.yuque.com/docs/share/2d1e0f48-9420-4f71-9515-f64c7163afb1?#

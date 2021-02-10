@@ -3,6 +3,7 @@
 > 仅汇总主题所有链接，详细内容查看需要切换到相关链接。
 > https://gitee.com/cloudlove2007/k8s-center/blob/master/README.md （备份）
 
+- 《CentOS-8.3.2011服务器虚拟机模板制作》 https://www.cnblogs.com/sw-blog/p/14394949.html
 - 《离线部署k8s-v1.20.2集群》 https://www.yuque.com/docs/share/27f9e19e-32da-4e05-bde4-9e301770a81a?#
 - 《k8s-v1.19.4集群部署实验记录文档》 https://www.cnblogs.com/sw-blog/p/14088846.html
 - 《从k8s到PaaS：k8s-01-架构与规划》  https://www.yuque.com/docs/share/c14386b5-a6a2-46b8-a417-70174452c718?#

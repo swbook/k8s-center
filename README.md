@@ -3,6 +3,7 @@
 > 仅汇总主题所有链接，详细内容查看需要切换到相关链接。
 > https://gitee.com/cloudlove2007/k8s-center/blob/master/README.md （备份）
 
+- 《centos7.x服务器内网时间同步部署》 https://www.yuque.com/docs/share/7e39100f-4b79-46ed-b52f-05da8b2bdab9?# 
 - 《CentOS7.x内核升级方法》 https://blog.csdn.net/peng_s_w/article/details/113806430
 - 《CentOS-8.3.2011服务器虚拟机模板制作》 https://www.cnblogs.com/sw-blog/p/14394949.html
 - 《离线部署k8s-v1.20.2集群》 https://www.yuque.com/docs/share/27f9e19e-32da-4e05-bde4-9e301770a81a?#

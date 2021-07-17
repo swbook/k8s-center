@@ -3,6 +3,7 @@
 > 仅汇总主题所有链接，详细内容查看需要切换到相关链接。
 > https://gitee.com/cloudlove2007/k8s-center/blob/master/README.md （备份）
 
+- 《k8s-v1.21.2 + centos8.4高可用集群kubeadm离线部署》 https://vanilla-ninja-38c.notion.site/k8s-v1-21-2-centos8-4-kubeadm-3b0ca12a6fd948a4b9f1257b9591c8d2
 - 《k8s-v1.20.2 + CentOS-8.3.2011集群二进制部署》 https://www.yuque.com/docs/share/53bbaabb-4405-4ace-96dc-b0f74d52458b?# 
 - 《centos7.x服务器内网时间同步部署》 https://www.yuque.com/docs/share/7e39100f-4b79-46ed-b52f-05da8b2bdab9?# 
 - 《CentOS7.x内核升级方法》 https://blog.csdn.net/peng_s_w/article/details/113806430

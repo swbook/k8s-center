@@ -102,11 +102,8 @@ http://nginx.org：http://nginx.org/download/nginx-1.24.0.tar.gz  （Stable vers
   URL类型是：`软件库URL`
   注意上面的阿里路径最后要记得加上一个斜杠==/==
 
-![image-20230426171006565](k8s-v1.26.4 + CentOS-8.5.2111集群部署.assets/image-20230426171006565.png)
 
 ### 02 软件选择：最小安装
-
-![image-20230426171323016](k8s-v1.26.4 + CentOS-8.5.2111集群部署.assets/image-20230426171323016.png)
 
 安装完成，重启系统
 
@@ -115,8 +112,6 @@ http://nginx.org：http://nginx.org/download/nginx-1.24.0.tar.gz  （Stable vers
 
 # uname -r
 ```
-
-![image-20230426173507247](k8s-v1.26.4 + CentOS-8.5.2111集群部署.assets/image-20230426173507247.png)
 
 ### 03 基本设置
 
@@ -2313,9 +2308,6 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6InFnVzJBTS1IbFYtYVdFX1JEazMyYnkzczM4dURTLWlsN0NXQUlR
 ```
 
 - https://192.168.26.61:31235/
-
-![image-20230503124425296](k8s-v1.26.4 + CentOS-8.5.2111集群部署.assets/image-20230503124425296.png)
-
 
 
 ## 十、集群验证

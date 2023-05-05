@@ -7,7 +7,7 @@
 - 集群内`dns`解析/服务发现验证，`pod`跨节点跨命名空间访问验证。
 - 部署过程中的问题借助了`chatGPT`、搜索引擎。
 
-- 二零二叁五一于广州。
+- 二零二三五一于广州。
 
 -------------------------------
 
@@ -53,15 +53,7 @@ github：https://github.com/containerd/containerd/releases/tag/v1.6.20
 
 github：https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.24.2/crictl-v1.24.2-linux-amd64.tar.gz
 
-### 06 下载calico-v3.25.1
-
-- `release-v3.25.1.tgz`: container images, binaries, and kubernetes manifests.
-
-github：https://github.com/projectcalico/calico/releases
-
-> https://github.com/projectcalico/calico/releases/download/v3.25.1/calicoctl-linux-amd64
-
-### 07 下载cfssl-v1.6.4
+### 06 下载cfssl-v1.6.4
 
 github：https://github.com/cloudflare/cfssl/releases
 
@@ -69,11 +61,11 @@ github：https://github.com/cloudflare/cfssl/releases
 >
 > https://github.com/cloudflare/cfssl/releases/download/v1.6.4/cfssljson_1.6.4_linux_amd64
 
-### 08 下载nginx-1.24.0
+### 07 下载nginx-1.24.0
 
 http://nginx.org：http://nginx.org/download/nginx-1.24.0.tar.gz  （Stable version）
 
-### 09 资源清单与镜像
+### 08 资源清单与镜像
 
 | 类型 | 名称                               | 下载链接                                                     | 说明 |
 | ---- | ---------------------------------- | ------------------------------------------------------------ | ---- |
@@ -100,17 +92,17 @@ http://nginx.org：http://nginx.org/download/nginx-1.24.0.tar.gz  （Stable vers
 - 协议选择为：`http://`
   路径是：`mirrors.aliyun.com/centos/8.5.2111/BaseOS/x86_64/os/`
   URL类型是：`软件库URL`
-  注意上面的阿里路径最后要记得加上一个斜杠==/==
-
+  注意上面的阿里路径最后要记得加上一个斜杠`/`
 
 ### 02 软件选择：最小安装
 
 安装完成，重启系统
 
-```
+```sh
 # cat /etc/redhat-release
-
+CentOS Linux release 8.5.2111
 # uname -r
+4.18.0-348.7.1.el8_5.x86_64
 ```
 
 ### 03 基本设置
@@ -167,9 +159,9 @@ hostnamectl set-hostname vm${1}.centos85
 echo "192.168.26.$1 vm${1}.centos85 vm${1}" >> /etc/hosts
 ```
 
-==与/etc/sysconfig/network-scripts/ifcfg-ens160一致，ens32改为ens160==
+**与/etc/sysconfig/network-scripts/ifcfg-ens160一致，ens32改为ens160**
 
-==centos8与centos7重启网络命令不同==
+**centos8与centos7重启网络命令不同**
 
 ```
 ##centos7重启网络
@@ -179,7 +171,7 @@ nmcli connection reload
 nmcli connection up ens160 &> /dev/null
 ```
 
-==因为最小化安装，可能缺少ifconfig，需要：yum install net-tools -y==
+**因为最小化安装，可能缺少ifconfig，需要：yum install net-tools -y**
 
 ```ini
 ##配置yum源
@@ -189,17 +181,17 @@ yum update -y
 yum install net-tools -y
 ```
 
-==poweroff 关掉模板机，以后不要启动，否则需要重新设置。==
+**poweroff 关掉模板机，以后不要启动，否则需要重新设置。**
 
 
 
 ## 三、主机准备
 
-| 序号 | 主机名 | IP            | OS                            | 内核                        | 运行时           | K8S              | 工具包   |
-| ---- | ------ | ------------- | ----------------------------- | --------------------------- | ---------------- | ---------------- | -------- |
-| 1    | vm61   | 192.168.26.61 | CentOS Linux release 8.5.2111 | 4.18.0-348.7.1.el8_5.x86_64 | containerd1.6.20 | kubernetes1.26.4 |          |
-| 2    | vm62   | 192.168.26.62 | CentOS Linux release 8.5.2111 | 4.18.0-348.7.1.el8_5.x86_64 | containerd1.6.20 | kubernetes1.26.4 | 开发工具 |
-| 3    | vm63   | 192.168.26.63 | CentOS Linux release 8.5.2111 | 4.18.0-348.7.1.el8_5.x86_64 | containerd1.6.20 | kubernetes1.26.4 |          |
+| 序号 | 主机名 | IP            | OS                            | 内核                        | 运行时           | K8S              | 工具包         |
+| ---- | ------ | ------------- | ----------------------------- | --------------------------- | ---------------- | ---------------- | -------------- |
+| 1    | vm61   | 192.168.26.61 | CentOS Linux release 8.5.2111 | 4.18.0-348.7.1.el8_5.x86_64 | containerd1.6.20 | kubernetes1.26.4 | ipvs           |
+| 2    | vm62   | 192.168.26.62 | CentOS Linux release 8.5.2111 | 4.18.0-348.7.1.el8_5.x86_64 | containerd1.6.20 | kubernetes1.26.4 | ipvs、开发工具 |
+| 3    | vm63   | 192.168.26.63 | CentOS Linux release 8.5.2111 | 4.18.0-348.7.1.el8_5.x86_64 | containerd1.6.20 | kubernetes1.26.4 | ipvs           |
 
 ### 01 主机名与hosts本地解析
 
@@ -234,7 +226,7 @@ not running
 SELinux status:                 disabled
 ```
 
-==修改SELinux配置需要重启操作系统。==
+**修改SELinux配置需要重启操作系统。**
 
 ### 04 关闭交换分区
 
@@ -370,7 +362,7 @@ EOF
 
 ### 11 设置rpm包下载保存
 
-==yum安装时rpm包默认不保存，如果需要保存则设置`keepcache=1`，保存位置默认`/var/cache/dnf/*/packages`==
+**yum安装时rpm包默认不保存，如果需要保存则设置`keepcache=1`，保存位置默认`/var/cache/dnf/*/packages`**
 
 ```sh
 ~]# cat /etc/dnf/dnf.conf
@@ -387,7 +379,7 @@ skip_if_unavailable=False
 
 ### 12 安装开发工具
 
-==因为最小化安装，没有安装开发工具，导致一些需要编译安装的软件包不能正常安装。==
+**因为最小化安装，没有安装开发工具，导致一些需要编译安装的软件包不能正常安装。**
 
 ```sh
  ~]# yum grouplist
@@ -591,7 +583,7 @@ EOF
 
 ### 02 安装libseccomp2.5.4
 
-==此步在runc运行出错时执行。==
+**此步在runc运行出错时执行。**
 
 ```sh
 ]# tar xf libseccomp-2.5.4.tar.gz
@@ -688,7 +680,7 @@ EOF
 
 ### 05 在其它节点安装
 
-==在vm61、vm63上安装，这里给出vm61上的操作。==
+**在vm61、vm63上安装，这里给出vm61上的操作。**
 
 ```sh
 ##01 containerd: 复制软件、配置文件，重复上面步骤
@@ -1343,7 +1335,7 @@ t]# ln -s /opt/bin/kubectl /usr/local/bin/kubectl
 
 ### 01 Nginx高可用方案
 
-==使用 nginx方案，kube-apiserver中的配置为： `--server=https://127.0.0.1:8443`==
+**使用 nginx方案，kube-apiserver中的配置为： `--server=https://127.0.0.1:8443`**
 
 - 安装nginx
 
@@ -1603,7 +1595,7 @@ EOF
 
 ### 03 kubectl配置
 
-- 创建admin.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。==在一个节点执行一次即可==
+- 创建admin.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。**在一个节点执行一次即可**
 
 ```sh
 kubectl config set-cluster kubernetes     \
@@ -1694,7 +1686,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-- 创建kube-controller-manager.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。==在一个节点执行一次即可==
+- 创建kube-controller-manager.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。在一个节点执行一次即可。
 
 ```sh
 kubectl config set-cluster kubernetes \
@@ -1766,7 +1758,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-- 创建scheduler.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。==在一个节点执行一次即可==
+- 创建scheduler.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。在一个节点执行一次即可。
 
 ```sh
 kubectl config set-cluster kubernetes \
@@ -1811,7 +1803,7 @@ etcd-1               Healthy   {"health":"true","reason":""}
 
 ### 06 配置bootstrapping
 
-- 创建bootstrap-kubelet.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。==在一个节点执行一次即可==
+- 创建bootstrap-kubelet.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。在一个节点执行一次即可。
 
 ```sh
 kubectl config set-cluster kubernetes     \
@@ -1835,7 +1827,7 @@ kubectl config use-context tls-bootstrap-token-user@kubernetes     \
 ]# scp /opt/cert/bootstrap-kubelet.kubeconfig root@vm63:/opt/cert/bootstrap-kubelet.kubeconfig
 ```
 
-==token的位置在bootstrap.secret.yaml，如果修改的话到这个文件修改==
+**token的位置在bootstrap.secret.yaml，如果修改的话到这个文件修改。**
 
 ```sh
 ## 创建token
@@ -1891,7 +1883,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-==kubelet.kubeconfig为自动创建的文件，如果已存在就删除==
+**kubelet.kubeconfig为自动创建的文件，如果已存在就删除**
 
 - 所有k8s节点创建kubelet的配置文件/opt/cfg/kubelet.json
 
@@ -1931,7 +1923,7 @@ cat > /opt/cfg/kubelet.json << "EOF"
 EOF
 ```
 
-=="address": "192.168.26.61"==；=="address": "192.168.26.62"==；  =="address": "192.168.26.63"==
+`"address": "192.168.26.61"`；`"address": "192.168.26.62"`；  `"address": "192.168.26.63"`
 
 - 启动
 
@@ -1954,7 +1946,7 @@ node-csr-rcTYmMDLymUw7C43HYguI0ntGT9xFp7CJkZ_8amRn74   9h    kubernetes.io/kube-
 
 ### 08 部署kube-proxy
 
-- 创建kube-proxy.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。==在一个节点执行一次即可==
+- 创建kube-proxy.kubeconfig。使用 nginx方案，`--server=https://127.0.0.1:8443`。在一个节点执行一次即可。
 
 ```sh
 kubectl config set-cluster kubernetes     \
@@ -2308,6 +2300,7 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6InFnVzJBTS1IbFYtYVdFX1JEazMyYnkzczM4dURTLWlsN0NXQUlR
 ```
 
 - https://192.168.26.61:31235/
+
 
 
 ## 十、集群验证
@@ -3045,7 +3038,7 @@ EOF
 
 
 
-## 附：ipvs安装工具
+## 附：安装ipvs工具
 
 ```sh
 ~]# yum install ipvsadm ipset sysstat conntrack libseccomp -y

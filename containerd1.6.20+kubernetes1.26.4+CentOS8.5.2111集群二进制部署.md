@@ -89,9 +89,10 @@ http://nginx.org：http://nginx.org/download/nginx-1.24.0.tar.gz  （Stable vers
 将安装源(软件源)配置为阿里的：
 
 - 协议选择为：`http://`
-  路径是：`mirrors.aliyun.com/centos/8.5.2111/BaseOS/x86_64/os/`
-  URL类型是：`软件库URL`
-  注意上面的阿里路径最后要记得加上一个斜杠`/`
+- 路径是：`mirrors.aliyun.com/centos/8.5.2111/BaseOS/x86_64/os/`
+- URL类型是：`软件库URL`
+
+**注意上面的阿里路径最后要记得加上一个斜杠`/`**
 
 ### 02 软件选择：最小安装
 
@@ -2298,7 +2299,7 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6InFnVzJBTS1IbFYtYVdFX1JEazMyYnkzczM4dURTLWlsN0NXQUlR
 
 ```
 
-- https://192.168.26.61:31235/
+- 浏览器访问：https://192.168.26.61:31235/
 
 
 

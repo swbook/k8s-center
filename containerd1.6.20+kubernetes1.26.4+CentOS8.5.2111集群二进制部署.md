@@ -74,7 +74,6 @@ http://nginx.org：http://nginx.org/download/nginx-1.24.0.tar.gz  （Stable vers
 | 资源 | recommended.yaml                   | https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml | 部署 |
 | 资源 | components.yaml （metrics server） | https://mirrors.chenby.cn/https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/high-availability.yaml | 部署 |
 | 镜像 | metrics-server:v0.6.3              | registry.aliyuncs.com/google_containers/metrics-server:v0.6.3 | 部署 |
-| 镜像 | coredns:1.8.6                      | registry.aliyuncs.com/google_containers/coredns:1.8.6        | 部署 |
 | 镜像 | coredns:v1.10.0                    | registry.aliyuncs.com/google_containers/coredns:v1.10.0      | 部署 |
 | 镜像 | dashboard:v2.7.0                   | kubernetesui/dashboard:v2.7.0                                | 部署 |
 | 镜像 | metrics-scraper:v1.0.8             | kubernetesui/metrics-scraper:v1.0.8                          | 部署 |

@@ -3,6 +3,8 @@
 > 仅汇总主题所有链接，详细内容查看需要切换到相关链接。
 > https://gitee.com/cloudlove2007/k8s-center/blob/master/README.md （备份）
 
+- 《CentOS7.9+Kubernetes1.29.2+Docker25.0.3高可用集群二进制部署》 https://blog.csdn.net/peng_s_w/article/details/136119964?spm=1001.2014.3001.5502
+- 《CentOS7.9+Kubernetes1.28.3+Docker24.0.6高可用集群二进制部署》 https://blog.csdn.net/peng_s_w/article/details/133996322?spm=1001.2014.3001.5502
 - 《kubernetes1.26.6+CentOS7.9二进制部署》 https://www.notion.so/swbook/kubernetes1-26-6-CentOS7-9-2af3634e77b34adba945991bbe67cfe1?pvs=4
 - 《containerd1.6.20+kubernetes1.26.4+CentOS8.5.2111集群二进制部署》 https://github.com/swbook/k8s-center/blob/main/containerd1.6.20%2Bkubernetes1.26.4%2BCentOS8.5.2111%E9%9B%86%E7%BE%A4%E4%BA%8C%E8%BF%9B%E5%88%B6%E9%83%A8%E7%BD%B2.md
 - 《istio部署与bookinfo示例应用基础》 https://swbook.notion.site/istio-bookinfo-6492a29d26154ffd8bfd8a39fd4bb17c
